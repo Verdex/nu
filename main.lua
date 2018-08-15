@@ -6,6 +6,7 @@ dofile "keyboard.lua"
 
 function love.load()
 
+
     init_keyboard()
 
     hero = { x = 0; y = 0; move = false; speed = 5 }
@@ -29,6 +30,8 @@ end
 
 function love.draw()
 
+    love.graphics.print( zz or "empty", 500, 500 )
+    love.graphics.print( getCommand_keyboard(), 400, 400 )
 
 -- TODO need display  order
 
@@ -43,6 +46,7 @@ function love.draw()
 end
 
 function love.keypressed( key )
+zz = key
     handle_keypress( key, hero )
 end
 
